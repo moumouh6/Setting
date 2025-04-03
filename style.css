@@ -165,6 +165,146 @@ body {
     left: 0;
 }
 
+/* main content */
+
+.main-content{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.settings-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: auto;
+    width: 70%;
+}
+
+
+form {
+    width: 60%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    position: relative;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+input {
+    padding: 10px;
+    padding-right: 0%;
+    padding-left: 5px;
+    border: 1px solid #878787;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+.btn-save{
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    background-color: #7c3aed;
+    color: white;
+}
+
+
+/* Mot de passe avec icône */
+.password-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.password-container input {
+    width: 100%;
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.option {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.option .arrow {
+    transition: transform 0.3s;
+}
+
+.section {
+    display: none;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.fix {
+    display: flex;
+    align-items: center; /* Centre les éléments verticalement */
+    justify-content: space-between; /* Espacement entre le label et la case à cocher */
+    width: 100%; /* Assure que la div prend toute la largeur disponible */
+}
+
+.fix label {
+    flex-grow: 1; /* Permet au label de prendre l'espace disponible */
+    min-width: 150px; /* Assure un bon alignement */
+}
+
+.fix input {
+    margin-left: 10px; /* Ajoute un petit espace entre le texte et la case */
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+.dark-mode {
+    background: #333;
+    color: white;
+}
+
 /* Pied de page */
 
 .contact {
