@@ -52,31 +52,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Charger les infos stockées
-    document.getElementById("nom").value = localStorage.getItem("nom") || "";
-    document.getElementById("prenom").value = localStorage.getItem("prenom") || "";
-    document.getElementById("email").value = localStorage.getItem("email") || "";
-    document.getElementById("telephone").value = localStorage.getItem("telephone") || "";
-    document.getElementById("password").value = localStorage.getItem("password") || "";
+    // Load stored information
+    const nomInput = document.getElementById("nom");
+    const prenomInput = document.getElementById("prenom");
+    const emailInput = document.getElementById("email");
+    const telephoneInput = document.getElementById("telephone");
+    const passwordInput = document.getElementById("password");
 
-    // Fonction pour sauvegarder les informations
+    nomInput.value = localStorage.getItem("nom") || "";
+    prenomInput.value = localStorage.getItem("prenom") || "";
+    emailInput.value = localStorage.getItem("email") || "";
+    telephoneInput.value = localStorage.getItem("telephone") || "";
+    passwordInput.value = localStorage.getItem("password") || "";
+
+    // Function to save user information
     window.saveUserInfo = function() {
-        const nom = document.getElementById("nom").value;
-        const prenom = document.getElementById("prenom").value;
-        const email = document.getElementById("email").value;
-        const telephone = document.getElementById("telephone").value;
-        const password = document.getElementById("password").value;
+        localStorage.setItem("nom", nomInput.value);
+        localStorage.setItem("prenom", prenomInput.value);
+        localStorage.setItem("email", emailInput.value);
+        localStorage.setItem("telephone", telephoneInput.value);
+        localStorage.setItem("password", passwordInput.value);
 
-        localStorage.setItem("nom", nom);
-        localStorage.setItem("prenom", prenom);
-        localStorage.setItem("email", email);
-        localStorage.setItem("telephone", telephone);
-        localStorage.setItem("password", password);
+        // Dispatch a custom event to notify other pages
+        window.dispatchEvent(new Event("storage"));
 
         alert("Informations enregistrées !");
     };
-
 });
+
 
 
 const togglePassword = document.querySelector(".toggle-password");
